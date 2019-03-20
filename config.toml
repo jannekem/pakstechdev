@@ -1,6 +1,6 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "My New Site"
+title = "Päkstech.dev"
 theme = "bloggeri"
 
 [[menu.main]]
@@ -26,5 +26,15 @@ theme = "bloggeri"
     url = "https://twitter.com/pakstech"
     pre = "<i class='fab fa-twitter'></i>"
 
+[[menu.footer]]
+  name = "About"
+  url = "/about"
+
+[[menu.footer]]
+  name = "Privacy"
+  url = "/privacy"
+
 [params]
     description = "My site description"
+    author = "Janne Kemppainen"
+    authorImage = "/images/janne.jpg"
