@@ -4,8 +4,20 @@
         <div class="columns is-centered">
             <div class="column max-800px">
                 <h1 class="title is-1">{{ .Title }}</h1>
-                <p class="title subtitle heading is-6">{{ .Site.Params.Author }} |
-                    <time>{{ .PublishDate.Format "January 2, 2006" }}</time></p>
+                <div class="title subtitle heading is-6">
+                    <div class="columns is-vcentered is-mobile">
+                        {{ with .Site.Params.authorImage }}
+                        <div class="column is-narrow">
+                            <img src="{{ . }}" class="author-image">
+                        </div>
+                        {{ end }}
+                        <div class="column">
+                            <p>{{ .Site.Params.Author }}</p>
+                            <p><time>{{ .PublishDate.Format "January 2, 2006" }}</time> |
+                                {{ .ReadingTime }} {{ if eq .ReadingTime 1 }} minute {{ else }} minutes {{ end }}</p>
+                        </div>
+                    </div>
+                </div>
                 {{ with .Params.images }}
                 <figure class="image title-image">
                     <img src="{{ index . 0 }}" alt="">
