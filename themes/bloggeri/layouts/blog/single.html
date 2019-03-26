@@ -5,21 +5,33 @@
             <div class="column max-800px">
                 <h1 class="title is-1">{{ .Title }}</h1>
                 <div class="title subtitle heading is-6">
-                    <div class="columns is-vcentered is-mobile">
-                        {{ with .Site.Params.authorImage }}
-                        <div class="column is-narrow">
-                            <img src="{{ . }}" class="author-image">
-                        </div>
-                        {{ end }}
+                    <div class="columns is-vcentered">
                         <div class="column">
-                            <p>{{ .Site.Params.Author }}</p>
-                            <p><time>{{ .PublishDate.Format "January 2, 2006" }}</time> |
-                                {{ .ReadingTime }} {{ if eq .ReadingTime 1 }} minute {{ else }} minutes {{ end }}</p>
+                            <div class="columns is-vcentered is-mobile">
+                                {{ with .Site.Params.authorImage }}
+                                <div class="column is-narrow">
+                                    <img src="{{ . }}" class="author-image">
+                                </div>
+                                {{ end }}
+                                <div class="column">
+                                    <p>{{ .Site.Params.Author }}</p>
+                                    <p><time>{{ .PublishDate.Format "January 2, 2006" }}</time> |
+                                        {{ .ReadingTime }} {{ if eq .ReadingTime 1 }} minute {{ else }} minutes
+                                        {{ end }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            {{ range $idx, $category := .Params.categories }}
+                            {{- if ne $idx 0 }}, {{ end }}<a
+                                href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
+                            {{- end }}
                         </div>
                     </div>
                 </div>
                 {{ with .Params.images }}
-                <figure class="image title-image">
+                <figure class="title-image">
                     <img src="{{ index . 0 }}" alt="">
                 </figure>
                 {{ end }}
@@ -29,5 +41,25 @@
             </div>
         </div>
     </article>
+</section>
+<section class="section">
+    <div class="columns is-centered">
+        <div class="column max-800px">
+            <div class="columns is-mobile">
+                <div class="column has-text-left">
+                    {{ with .PrevInSection }}
+                    <p>Previous post</p>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    {{ end }}
+                </div>
+                <div class="column has-text-right">
+                    {{ with .NextInSection }}
+                    <p>Next post</p>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 {{ end }}
