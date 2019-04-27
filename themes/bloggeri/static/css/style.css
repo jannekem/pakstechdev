@@ -27,3 +27,8 @@ main {
     width: 48px;
     height: 48px;
 }
+
+.narrow-background {
+    display: table;
+    padding: 0.1em;
+}

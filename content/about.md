@@ -2,6 +2,7 @@
 title: "About Me"
 date: 2019-04-26T20:18:54+03:00
 heroimage: /images/author.jpg
+herotext: Helping you succeed in life
 layout: about
 ---
 
