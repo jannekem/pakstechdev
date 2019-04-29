@@ -1,0 +1,131 @@
+{{ define "main" }}
+<style>
+    @media screen and (max-width: 768px) {
+        li>a>span:not(.icon) {
+            visibility: hidden;
+            position: absolute;
+        }
+
+        nav.tabs li {
+            -webkit-box-flex: 0;
+            -ms-flex-positive: 0;
+            flex-grow: 0;
+            -ms-flex-negative: 1;
+            flex-shrink: 1;
+        }
+
+        .tabs .icon {
+            margin-left: 0.5em;
+        }
+    }
+
+    .contact-form {
+        width: 640px;
+        height: 960px;
+        overflow: scroll;
+    }
+
+    .map-responsive {
+        overflow: hidden;
+        padding-bottom: 100%;
+        position: relative;
+        height: 0;
+    }
+
+    .map-responsive iframe {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+</style>
+<div class="hero is-dark is-medium" {{ with .Params.heroimage }}
+    style="background: url({{ . }}) center center; background-size:cover;" {{ end }}>
+    <div class="hero-head">
+        <div class="container">
+            <h1 class="title is-2 has-background-primary narrow-background">
+                {{ .Title }}
+            </h1>
+            {{ with .Params.herotext }}
+            <h2 class="title subtitle is-4 has-background-primary narrow-background">
+                {{ . }}
+            </h2>
+            {{ end }}
+        </div>
+    </div>
+    <div class="hero-body"></div>
+    <div class="hero-foot">
+        {{ with .Params.buttons }}
+        <nav class="tabs">
+            <div class="container">
+                <ul>
+                    {{ range . }}
+                    <li>
+                        <a class="has-background-primary" {{ with .id }}id="{{ . }}" {{ end }}
+                            {{ with .ref }}href="{{ . | safeURL }}" {{ end }}>
+                            <span class="icon"><i class="{{ .icon }}" aria-hidden="true"></i></span>
+                            <span>{{ .name }}</span>
+                        </a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </nav>
+        {{ end }}
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+
+            </div>
+            {{ with .Params.map }}
+            <div class="column is-one-third">
+                <div class="map-responsive">
+                    <iframe
+                        src="https://maps.google.com/maps?hl=en&amp;q={{ . | htmlEscape }}&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed"
+                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        <div class="content">
+            {{ .Content }}
+        </div>
+    </div>
+</div>
+
+<!-- MAPPING -->
+
+
+<!-- MODAL FORM -->
+{{ with .Params.form }}
+<div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content" style="overflow: auto!important; -webkit-overflow-scrolling: touch!important;">
+        <iframe class="contact-form" src="{{ . }}" width="640" height="1019" frameborder="0" marginheight="0"
+            marginwidth="0">Loading...</iframe>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+</div>
+<script>
+    document.querySelector('a#open-modal').addEventListener('click', function (event) {
+        event.preventDefault();
+        var modal = document.querySelector('.modal');  // assuming you have only 1
+        var html = document.querySelector('html');
+        modal.classList.add('is-active');
+        html.classList.add('is-clipped');
+
+        var close = (e) => {
+            e.preventDefault();
+            modal.classList.remove('is-active');
+            html.classList.remove('is-clipped');
+        }
+        modal.querySelector('.modal-background').addEventListener('click', close);
+        modal.querySelector('.modal-close').addEventListener('click', close);
+    });
+</script>
+{{ end }}
+{{ end }}
