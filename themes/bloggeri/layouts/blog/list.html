@@ -8,8 +8,7 @@
         <div class="columns is-multiline">
             {{ range .Pages }}
             <div class="column is-half">
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-                {{ .Summary }}
+                {{ partial "widgets/post-card.html" . }}
             </div>
             {{ end }}
         </div>
