@@ -7,6 +7,7 @@ images:
 categories:
   - Winter
   - Blogging
+author: "John Doe"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec diam nibh, cursus in iaculis quis, euismod eu orci. Sed fringilla, tellus vitae blandit tincidunt.
