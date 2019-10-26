@@ -2,6 +2,7 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Päkstech.dev"
 theme = "bloggeri"
+paginate = 4
 
 [[menu.main]]
     name = "About"

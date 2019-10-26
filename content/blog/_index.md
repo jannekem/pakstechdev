@@ -1,5 +1,9 @@
 ---
-title: "Blog"
-date: 2019-03-19T16:50:58+02:00
+title: "Blog and content"
 ---
 
+This is my blog where I *really* like to teach you all the things.
+
+I hope you enjoy reading as much as I **love** writing!
+
+<hr>
