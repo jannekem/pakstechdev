@@ -19,11 +19,7 @@
         }
     }
 
-    .contact-form {
-        width: 640px;
-        height: 960px;
-        overflow: scroll;
-    }
+
 
     .map-responsive {
         overflow: hidden;
@@ -79,7 +75,9 @@
     <div class="container">
         <div class="columns">
             <div class="column">
-
+                <div class="content">
+                    {{ .Content }}
+                </div>
             </div>
             {{ with .Params.map }}
             <div class="column is-one-third">
@@ -91,17 +89,19 @@
             </div>
             {{ end }}
         </div>
-        <div class="content">
-            {{ .Content }}
-        </div>
     </div>
 </div>
-
-<!-- MAPPING -->
 
 
 <!-- MODAL FORM -->
 {{ with .Params.form }}
+<style>
+    .contact-form {
+        width: 640px;
+        height: 960px;
+        overflow: scroll;
+    }
+</style>
 <div class="modal">
     <div class="modal-background"></div>
     <div class="modal-content" style="overflow: auto!important; -webkit-overflow-scrolling: touch!important;">
