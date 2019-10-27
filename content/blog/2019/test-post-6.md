@@ -7,6 +7,7 @@ images:
 categories:
   - Winter
   - Blogging
+  - HTML
 author: "John Doe"
 ---
 

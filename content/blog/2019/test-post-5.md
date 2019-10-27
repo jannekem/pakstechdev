@@ -6,7 +6,6 @@ images:
   - /images/blog/2019/water.jpg
 categories:
   - Water
-  - Nature
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec diam nibh, cursus in iaculis quis, euismod eu orci. Sed fringilla, tellus vitae blandit tincidunt, tortor diam congue eros, quis tempor magna eros ac leo. Integer scelerisque nec sapien non suscipit.
