@@ -62,4 +62,21 @@
         </div>
     </div>
 </section>
+<section class="section">
+    <div class="columns is-centered">
+        <div class="column max-800px">
+            <div class="content">
+                <h2>Related content</h2>
+            </div>
+            <div class="columns">
+                {{ $related := .Site.RegularPages.Related . | first 3 }}
+                {{ range $related }}
+                <div class="column is-one-third">
+                    {{ partial "widgets/post-card-small.html" . }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
 {{ end }}

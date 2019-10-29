@@ -13,6 +13,10 @@ paginate = 4
     url = "/blog"
 
 [[menu.main]]
+    name = "Categories"
+    url = "/categories"
+
+[[menu.main]]
     name = "Contact"
     url = "/contact"
 
@@ -43,3 +47,20 @@ paginate = 4
     description = "My site description"
     author = "Janne Kemppainen"
     authorImage = "/images/janne.jpg"
+
+[related]
+    threshold = 0
+    includeNewer = true
+    toLower = false
+
+    [[related.indices]]
+        name = "categories"
+        weight = 100
+
+    [[related.indices]]
+        name = "date"
+        weight = 10
+
+
+    
+    

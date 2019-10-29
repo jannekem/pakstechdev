@@ -6,6 +6,7 @@ images:
   - /images/blog/2019/fields.jpg
 categories:
   - Nature
+  - Grass
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec diam nibh, cursus in iaculis quis, euismod eu orci. Sed fringilla, tellus vitae blandit tincidunt, tortor diam congue eros, quis tempor magna eros ac leo. Integer scelerisque nec sapien non suscipit. Cras pretium ligula magna, ut aliquam nulla iaculis ut. Nam pharetra tempor turpis, a sodales libero facilisis a. Maecenas nisi tellus, ornare eget vehicula a, iaculis a felis. Nam neque odio, aliquam vel auctor vel, suscipit in velit.
