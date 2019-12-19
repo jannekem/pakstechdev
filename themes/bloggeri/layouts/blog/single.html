@@ -43,6 +43,11 @@
     </article>
 </section>
 <section class="section">
+    <div class="container max-800px">
+        <div id="replybox"></div>
+    </div>
+</section>
+<section class="section">
     <div class="columns is-centered">
         <div class="column max-800px">
             <div class="columns is-mobile">
@@ -59,9 +64,14 @@
                     {{ end }}
                 </div>
             </div>
+            </div>
         </div>
     </div>
 </section>
+<div class="container">
+    <div class="section has-text-centered">
+    </div>
+</div>
 <section class="section">
     <div class="columns is-centered">
         <div class="column max-800px">
@@ -69,7 +79,7 @@
                 <h2>Related content</h2>
             </div>
             <div class="columns">
-                {{ $related := .Site.RegularPages.Related . | first 3 }}
+                {{ $related := (where (.Site.RegularPages.Related .) "Type" "blog") | first 3 }}
                 {{ range $related }}
                 <div class="column is-one-third">
                     {{ partial "widgets/post-card-small.html" . }}
@@ -79,4 +89,15 @@
         </div>
     </div>
 </section>
+{{ end }}
+
+{{ define "end" }}
+{{ if not (in (string .Site.BaseURL) "localhost")}}
+<script>
+window.replybox = {
+	site: 'yourCode', 
+};
+</script>
+<script src="https://cdn.getreplybox.com/js/embed.js"></script>
+{{ end }}
 {{ end }}
