@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://pakstech.download/"
 languageCode = "en-us"
 title = "Päkstech.dev"
 theme = "bloggeri"
