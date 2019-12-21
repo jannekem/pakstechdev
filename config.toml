@@ -4,6 +4,11 @@ title = "Päkstech.dev"
 theme = "bloggeri"
 paginate = 4
 
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+
 [[menu.main]]
     name = "About"
     url = "/about"
