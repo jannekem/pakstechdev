@@ -52,6 +52,8 @@ paginate = 4
     description = "My site description"
     author = "Janne Kemppainen"
     authorImage = "/images/janne.jpg"
+    primaryColor = "#1a535c"
+    googleFont = "Open Sans"
 
 [related]
     threshold = 0
