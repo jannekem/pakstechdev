@@ -17,6 +17,12 @@ date: 2019-03-14T19:02:08+02:00
     </div>
 </section>
 
+<section class="section">
+<div class="container has-text-centered">
+<button class="button is-primary is-rounded is-large">Big button!</button>
+</div>
+</section>
+
 {{< section >}}
 <h2 class="has-text-centered">Our mission</h2>
 
